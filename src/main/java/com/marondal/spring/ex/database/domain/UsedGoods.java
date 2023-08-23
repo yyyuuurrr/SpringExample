@@ -14,7 +14,7 @@ public class UsedGoods {
 	private int price;
 	private String description;
 	private String image;
-	private Date creatdAt;
+	private Date createdAt;
 	private Date updatedAt;
 	
 	
@@ -56,10 +56,10 @@ public class UsedGoods {
 		this.image = image;
 	}
 	public Date getCreatdAt() {
-		return creatdAt;
+		return createdAt;
 	}
 	public void setCreatdAt(Date creatdAt) {
-		this.creatdAt = creatdAt;
+		this.createdAt = creatdAt;
 	}
 	public Date getUpdatedAt() {
 		return updatedAt;
