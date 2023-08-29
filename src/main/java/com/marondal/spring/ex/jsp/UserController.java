@@ -22,19 +22,32 @@ public class UserController {
 	public String createUser(
 			@RequestParam("name")String name
 			, @RequestParam("birthday")String birthday
-			, @RequestParam("email")String email) {
+			, @RequestParam("email")String email
+			, Model model) {
 		
-		int count = userService.addUser(name, birthday, email);
+		//int count = userService.addUser(name, birthday, email);
 		
-		return "수행결과 : " + count;	
+		User user = new User();
+		
+		user.setName(name);
+		user.setYyyymmdd(birthday);
+		user.setEmail(email);
+		
+		int count  = userService.addUserByObject(user);
+		
+		model.addAttribute("result", user);
+		return "jsp/userInfo";
+		
+		// return "수행결과 : " + count;	
 	}
 		
+	
 	@GetMapping("/input")
 	public String inputUser() {
 		
-		return "jsp/userInput";
-		
+		return "jsp/userInput";		
 	}
+	
 	
 	@GetMapping("/last")
 	public String lastUser(Model model) {

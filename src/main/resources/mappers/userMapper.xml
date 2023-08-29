@@ -42,6 +42,25 @@
 	
 	</select>
 
+	<insert id="insertUserByObject" 
+	parameterType="com.marondal.spring.ex.jsp.domain.User"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+			`new_user`
+		(
+			`name`
+			, `yyyymmdd`
+			, `email`
+		)
+		VALUES
+		(
+			#{name}
+			, #{yyyymmdd}
+			, #{email}
+		
+		)
+		 
+	</insert>
 
 
 </mapper>
