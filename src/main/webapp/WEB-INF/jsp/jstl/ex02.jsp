@@ -13,13 +13,13 @@
 	
 	<h3>1. if else if</h3>
 	<%-- 몸무게가 70이하면 치킨, 80이하면 샐러드, 그게 아니면 굶어 --%>
-	<c:set var="weight" value="75" />
+	<c:set var="weight" value="68" />
 	
 	<c:choose >
-		<c:when test="${weight <= 70 } ">
+		<c:when test="${weight <= 70}">
 			<h4>치킨</h4>	
 		</c:when>
-		<c:when test="${weight <= 80 } ">
+		<c:when test="${weight <= 80}">
 			<h4>샐러드</h4>	
 		</c:when>
 		<c:otherwise>
@@ -40,10 +40,24 @@
 		<h4>${fruit } ::::: ${status.count }${status.index }${status.first }${status.last } </h4>
 	</c:forEach>
 	
-
-
-
-
+	
+	<h3>사용자 리스트</h3>
+	<table border="1">
+		<thead>
+			<th>이름</th>
+			<th>나이</th>
+			<th>취미</th>
+		</thead>
+		<%--for(Map<String, Object> user:userList) {}--%>
+			<c:forEach var="user" items="${userList }">
+			<tr>
+				<td>${user.name }</td>
+				<td>${user.age }</td>
+				<td>${user.hobby }</td>
+			</tr>
+			</c:forEach>
+		</tbody>	
+	</table>
 
 
 
