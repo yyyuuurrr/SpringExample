@@ -70,9 +70,24 @@ public class StudentService {
 		Optional<Student> optionalStudent = studentRepository.findById(id);
 		// 람다식
 		optionalStudent.ifPresent(student -> studentRepository.delete(student));
-		
-		
+				
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
